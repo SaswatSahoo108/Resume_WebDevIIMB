@@ -163,3 +163,28 @@ body {
         padding-bottom: 0; /* No extra padding at the very bottom */
     }
   }
+/* --- Responsive Considerations (Enhanced Mobile & Tablet Support) --- */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  td {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  table tr td:last-child {
+    padding-bottom: 0;
+  }
+}

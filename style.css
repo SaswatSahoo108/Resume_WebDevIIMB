@@ -1,0 +1,165 @@
+/* --- Global Reset & Terminal Theme --- */
+body {
+    background-color: #000000; /* Black terminal background */
+    color: #00FF00; /* Bright green text */
+    font-family: 'Courier New', Courier, monospace; /* Classic monospaced font */
+    line-height: 1.6;
+    margin: 0 auto; /* Center the content */
+    padding: 30px; /* Padding inside the 'terminal window' */
+    max-width: 850px; /* Max width for readability */
+    border: 1px solid #333; /* Subtle border for the terminal window */
+  }
+  
+  /* --- Basic Element Styling --- */
+  h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF; /* White for emphasis */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Common terminal style */
+    letter-spacing: 1px;
+  }
+  
+  h1 {
+    font-size: 2.5em; /* Larger main title */
+    margin-bottom: 0;
+    border-bottom: 1px solid #555; /* Separator line */
+    padding-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    color: #7FFF00; /* Chartreuse green for section titles */
+    border-bottom: 1px dashed #444; /* Dashed line under sections */
+    padding-bottom: 5px;
+    margin-top: 30px; /* More space before major sections */
+  }
+  
+  h3 {
+    font-size: 1.1em;
+    color: #90EE90; /* Lighter green for sub-titles */
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  p {
+    margin-bottom: 15px;
+    color: #00cc00; /* Slightly softer green for paragraphs */
+  }
+  
+  a {
+    color: #00BFFF; /* Deep Sky Blue for links */
+    text-decoration: none; /* Remove default underline */
+  }
+  
+  a:hover {
+    color: #87CEFA; /* Lighter blue on hover */
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: #444; /* Dark gray horizontal rule */
+    margin: 25px 0; /* Spacing around HR */
+  }
+  
+  /* --- List Styling --- */
+  ul {
+    list-style-type: square; /* Square bullets */
+    padding-left: 25px; /* Proper indentation */
+    margin-top: 5px;
+  }
+  
+  li {
+    margin-bottom: 8px; /* Spacing between list items */
+  }
+  
+  li strong { /* Style bold text within list items */
+      color: #FFFFFF; /* White for emphasis */
+  }
+  
+  /* --- Header Section Specifics --- */
+  h1 + h3 { /* Target the H3 immediately after H1 */
+    margin-top: 5px;
+    color: #90EE90; /* Lighter green for subtitle */
+    font-style: italic;
+  }
+  
+  h1 + h3 + p { /* Target the paragraph after the subtitle */
+      color: #ccc; /* Lighter gray for contact info */
+      font-size: 0.9em;
+  }
+  
+  /* --- Table Layout for Main Content --- */
+  table {
+    width: 100%;
+    border-collapse: collapse; /* Remove gaps between cells */
+    margin-top: 20px;
+  }
+  
+  td {
+    vertical-align: top; /* Align content to the top */
+    padding: 0 15px 15px 0; /* Spacing around cell content (right/bottom) */
+    width: 50%; /* Keep the two-column layout */
+  }
+  
+  td:last-child {
+    padding-right: 0; /* No padding on the right of the last cell */
+  }
+  
+  /* Specific styling for content within table cells */
+  td h2 {
+      margin-top: 0; /* Remove top margin for H2 inside table cells */
+  }
+  
+  td h3 {
+      margin-top: 10px; /* Adjust top margin for H3 in table cells */
+  }
+  
+  td ul {
+      margin-top: 10px; /* Add space before lists in table cells */
+  }
+  
+  /* Adjusting Skills Section Layout */
+  /* Find the H2 for skills and adjust its container if needed */
+  /* Since Skills H2 spans columns, we added colspan="2" in HTML. */
+  /* We can style the HR under it specifically if needed, but the general H2 styling should work */
+  table h2 + hr { /* Style HR immediately after H2 within the table */
+     margin: 5px 0 15px 0;
+     background-color: #555;
+     /* width is handled by colspan in HTML, so HR spans */
+  }
+  
+  
+  /* --- Emphasis and Strong Text --- */
+  strong {
+    font-weight: bold;
+    color: #FFFFFF; /* White for strong text */
+  }
+  
+  /* --- Responsive Considerations (Optional but good practice) --- */
+  @media (max-width: 600px) {
+    body {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 2em;
+    }
+  
+    h2 {
+      font-size: 1.3em;
+    }
+  
+    /* Stack table cells on smaller screens */
+    td {
+      display: block;
+      width: 100%;
+      padding-right: 0; /* Remove right padding when stacked */
+      padding-bottom: 20px; /* Add bottom padding between stacked cells */
+    }
+  
+    table tr td:last-child {
+        padding-bottom: 0; /* No extra padding at the very bottom */
+    }
+  }

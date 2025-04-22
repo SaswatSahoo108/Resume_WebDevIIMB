@@ -1,190 +1,428 @@
-/* --- Global Reset & Terminal Theme --- */
+/* --- Global Reset & Dark Mode Theme (Default) --- */
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
 body {
-    background-color: #000000; /* Black terminal background */
-    color: #00FF00; /* Bright green text */
-    font-family: 'Courier New', Courier, monospace; /* Classic monospaced font */
-    line-height: 1.6;
-    margin: 0 auto; /* Center the content */
-    padding: 30px; /* Padding inside the 'terminal window' */
-    max-width: 850px; /* Max width for readability */
-    border: 1px solid #333; /* Subtle border for the terminal window */
-  }
-  
-  /* --- Basic Element Styling --- */
-  h1, h2, h3, h4, h5, h6 {
+  background-color: #000000; /* Black background */
+  color: #cccccc; /* Default text color: Light Gray */
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.6;
+  margin: 0 auto;
+  padding: 70px 30px 30px 30px; /* Adjusted top padding slightly */
+  max-width: 850px;
+  border: 1px solid #333; /* Dark border */
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Basic Element Styling (Dark Mode) --- */
+h1, h2, h3, h4, h5, h6 {
+  color: #FFFFFF; /* White for emphasis */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0;
+  border-bottom: 1px solid #555; /* Darker separator */
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.5em;
+  /* color: #FFFFFF; /* Inherits white from above */
+  border-bottom: 1px dashed #444; /* Dark dashed line */
+  padding-bottom: 5px;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 1.1em;
+  color: #e0e0e0; /* Slightly dimmer white for sub-titles */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+p {
+  margin-bottom: 15px;
+  color: #cccccc; /* Light Gray for paragraphs */
+}
+
+/* Default link color for Dark Mode */
+a {
+  color: #00BFFF; /* Deep Sky Blue for links - stands out */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #87CEFA; /* Lighter blue on hover */
+  text-decoration: underline;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #444; /* Dark gray horizontal rule */
+  margin: 25px 0;
+}
+
+/* --- List Styling (Dark Mode) --- */
+ul {
+  list-style-type: square;
+  padding-left: 25px;
+  margin-top: 5px;
+  color: #cccccc; /* Ensure list items inherit base gray */
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+li strong { /* Style bold text within list items */
     color: #FFFFFF; /* White for emphasis */
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-transform: uppercase; /* Common terminal style */
-    letter-spacing: 1px;
-  }
-  
-  h1 {
-    font-size: 2.5em; /* Larger main title */
-    margin-bottom: 0;
-    border-bottom: 1px solid #555; /* Separator line */
-    padding-bottom: 10px;
-  }
-  
-  h2 {
-    font-size: 1.5em;
-    color: #7FFF00; /* Chartreuse green for section titles */
-    border-bottom: 1px dashed #444; /* Dashed line under sections */
-    padding-bottom: 5px;
-    margin-top: 30px; /* More space before major sections */
-  }
-  
-  h3 {
-    font-size: 1.1em;
-    color: #90EE90; /* Lighter green for sub-titles */
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-  
-  p {
-    margin-bottom: 15px;
-    color: #00cc00; /* Slightly softer green for paragraphs */
-  }
-  
-  a {
-    color: #00BFFF; /* Deep Sky Blue for links */
-    text-decoration: none; /* Remove default underline */
-  }
-  
-  a:hover {
-    color: #87CEFA; /* Lighter blue on hover */
-    text-decoration: underline; /* Add underline on hover */
-  }
-  
-  hr {
-    border: 0;
-    height: 1px;
-    background-color: #444; /* Dark gray horizontal rule */
-    margin: 25px 0; /* Spacing around HR */
-  }
-  
-  /* --- List Styling --- */
-  ul {
-    list-style-type: square; /* Square bullets */
-    padding-left: 25px; /* Proper indentation */
-    margin-top: 5px;
-  }
-  
-  li {
-    margin-bottom: 8px; /* Spacing between list items */
-  }
-  
-  li strong { /* Style bold text within list items */
-      color: #FFFFFF; /* White for emphasis */
-  }
-  
-  /* --- Header Section Specifics --- */
-  h1 + h3 { /* Target the H3 immediately after H1 */
-    margin-top: 5px;
-    color: #90EE90; /* Lighter green for subtitle */
-    font-style: italic;
-  }
-  
-  h1 + h3 + p { /* Target the paragraph after the subtitle */
-      color: #ccc; /* Lighter gray for contact info */
-      font-size: 0.9em;
-  }
-  
-  /* --- Table Layout for Main Content --- */
-  table {
-    width: 100%;
-    border-collapse: collapse; /* Remove gaps between cells */
-    margin-top: 20px;
-  }
-  
-  td {
-    vertical-align: top; /* Align content to the top */
-    padding: 0 15px 15px 0; /* Spacing around cell content (right/bottom) */
-    width: 50%; /* Keep the two-column layout */
-  }
-  
-  td:last-child {
-    padding-right: 0; /* No padding on the right of the last cell */
-  }
-  
-  /* Specific styling for content within table cells */
-  td h2 {
-      margin-top: 0; /* Remove top margin for H2 inside table cells */
-  }
-  
-  td h3 {
-      margin-top: 10px; /* Adjust top margin for H3 in table cells */
-  }
-  
-  td ul {
-      margin-top: 10px; /* Add space before lists in table cells */
-  }
-  
-  /* Adjusting Skills Section Layout */
-  /* Find the H2 for skills and adjust its container if needed */
-  /* Since Skills H2 spans columns, we added colspan="2" in HTML. */
-  /* We can style the HR under it specifically if needed, but the general H2 styling should work */
-  table h2 + hr { /* Style HR immediately after H2 within the table */
-     margin: 5px 0 15px 0;
-     background-color: #555;
-     /* width is handled by colspan in HTML, so HR spans */
-  }
-  
-  
-  /* --- Emphasis and Strong Text --- */
-  strong {
-    font-weight: bold;
-    color: #FFFFFF; /* White for strong text */
-  }
-  
-  /* --- Responsive Considerations (Optional but good practice) --- */
-  @media (max-width: 600px) {
-    body {
-      padding: 15px;
-    }
-  
-    h1 {
-      font-size: 2em;
-    }
-  
-    h2 {
-      font-size: 1.3em;
-    }
-  
-    /* Stack table cells on smaller screens */
-    td {
-      display: block;
-      width: 100%;
-      padding-right: 0; /* Remove right padding when stacked */
-      padding-bottom: 20px; /* Add bottom padding between stacked cells */
-    }
-  
-    table tr td:last-child {
-        padding-bottom: 0; /* No extra padding at the very bottom */
-    }
-  }
-/* --- Responsive Considerations (Enhanced Mobile & Tablet Support) --- */
+}
+
+/* --- Header Section Specifics (Dark Mode) --- */
+h1 + h3 { /* Target the H3 immediately after H1 */
+  margin-top: 5px;
+  color: #e0e0e0; /* Dimmer white subtitle */
+  font-style: italic;
+}
+
+h1 + h3 + p { /* Target the paragraph after the subtitle */
+    color: #bbbbbb; /* Even dimmer gray for contact info */
+    font-size: 0.9em;
+}
+
+/* --- Emphasis and Strong Text (Dark Mode) --- */
+strong {
+  font-weight: bold;
+  color: #FFFFFF; /* White for strong text */
+}
+
+
+/* --- Theme Toggle Switch --- */
+.theme-switch-wrapper {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  width: 44px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  background-color: #555;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "🌙"; /* Moon icon for dark mode */
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #ccc; /* Handle background */
+  transition: .4s;
+  border-radius: 50%; /* Keep it round */
+  display: flex; /* Center the icon */
+  align-items: center;
+  justify-content: center;
+  font-size: 12px; /* Adjust icon size */
+  color: #333; /* Icon color on dark mode handle */
+}
+
+input:checked + .slider {
+  background-color: #ccc; /* Light background for slider track */
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+  background-color: #333; /* Dark handle background */
+  content: "☀️"; /* Sun icon for light mode */
+  color: #fff; /* Icon color on light mode handle */
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+
+/* --- Menu Button (Hamburger) --- */
+.menu-button {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #FFFFFF; /* White icon */
+  font-size: 2.2em; /* Adjust size if needed for hamburger */
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+  z-index: 1001;
+}
+
+.menu-button:hover {
+  color: #00BFFF; /* Blue hover like links */
+}
+
+/* --- Navigation Menu Panel --- */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100vh;
+  background-color: #1a1a1a; /* Dark menu background */
+  border-left: 1px solid #444;
+  padding: 60px 20px 20px 20px;
+  box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.5);
+  transition: right 0.4s ease-in-out;
+  z-index: 1002;
+  overflow-y: auto;
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin-bottom: 15px;
+}
+
+/* Link color inside menu for Dark Mode */
+.nav-menu a {
+  color: #FFFFFF; /* White menu links */
+  text-decoration: none;
+  font-size: 1.1em;
+  display: block;
+  padding: 5px 0;
+  transition: color 0.2s ease; /* Add transition for hover */
+}
+
+/* Hover color inside menu for Dark Mode */
+.nav-menu a:hover {
+  color: #cccccc; /* Light gray hover */
+  text-decoration: none;
+}
+
+.close-menu-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #ccc; /* Gray close button */
+    font-size: 2em;
+    cursor: pointer;
+    line-height: 1;
+}
+.close-menu-button:hover {
+    color: #fff; /* White on hover */
+}
+
+
+/* --- Table Layout for Main Content --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+td {
+  vertical-align: top; /* THIS aligns content to the top */
+  padding: 0 15px 15px 0;
+  width: 50%;
+}
+
+td:last-child {
+  padding-right: 0;
+}
+
+/* Specific styling for content within table cells */
+td h2 {
+    margin-top: 0; /* Crucial for top alignment */
+}
+
+td h3 {
+    margin-top: 10px;
+}
+
+td ul {
+    margin-top: 10px;
+}
+
+table h2 + hr {
+   margin: 5px 0 15px 0;
+   background-color: #555; /* Darker HR under section titles */
+}
+
+
+/* --- LIGHT MODE STYLES --- */
+body.light-mode {
+  background-color: #f8f8f8; /* Slightly off-white paper background */
+  color: #000000; /* Pure Black base text color <<< MODIFIED */
+  border-color: #ccc;
+}
+
+/* Headings and Emphasis Hierarchy */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3, /* <<< MODIFIED */
+body.light-mode strong,
+body.light-mode li strong {
+  color: #000000; /* Pure Black for top-level headings and emphasis */
+}
+
+body.light-mode h2 {
+  border-bottom-color: #ddd; /* Keep border */
+}
+
+/* Paragraphs and List Items inherit #000000 from body.light-mode */
+
+/* Default link color for Light Mode */
+body.light-mode a {
+  color: #000000; /* Black link <<< MODIFIED (Note: Might reduce usability) */
+  text-decoration: underline; /* Ensure links are still distinguishable */
+}
+
+/* Default link hover color for Light Mode */
+body.light-mode a:hover {
+  color: #333333; /* Dark Gray on hover <<< MODIFIED */
+  text-decoration: underline;
+}
+
+body.light-mode hr {
+  background-color: #ccc;
+}
+
+body.light-mode ul {
+    /* Color is inherited (#000000) */
+}
+
+/* Specific header elements */
+body.light-mode h1 + h3 {
+    color: #000000; /* Subtitle matches H3 color <<< MODIFIED */
+    font-style: italic; /* Keep italic */
+}
+
+body.light-mode h1 + h3 + p {
+    /* Color is inherited (#000000) */
+    font-size: 0.9em; /* Keep font size adjustment */
+}
+
+/* --- Styles for fixed elements in light mode --- */
+body.light-mode .menu-button {
+    color: #000000; /* Black hamburger <<< MODIFIED */
+}
+body.light-mode .menu-button:hover {
+    color: #555555; /* Dark Gray hover <<< MODIFIED */
+}
+
+/* Style overrides for Navigation Menu in Light Mode */
+body.light-mode .nav-menu {
+    background-color: #ffffff; /* White background */
+    border-left-color: #ddd;
+    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Link color inside menu for Light Mode */
+body.light-mode .nav-menu a {
+    color: #000000; /* Black menu links (was already black) */
+    transition: color 0.2s ease;
+}
+
+/* Hover color inside menu for Light Mode */
+body.light-mode .nav-menu a:hover {
+    color: #333333; /* Dark gray hover <<< MODIFIED */
+    text-decoration: none;
+}
+
+/* Close button inside menu for Light Mode */
+body.light-mode .close-menu-button {
+    color: #000000; /* Black close button <<< MODIFIED */
+}
+body.light-mode .close-menu-button:hover {
+    color: #555555; /* Dark gray on hover <<< MODIFIED */
+}
+
+
+/* --- Responsive Considerations --- */
 @media (max-width: 768px) {
-  body {
-    padding: 20px;
-  }
+  body { padding: 60px 20px 20px 20px; } /* Adjust padding */
+  h1 { font-size: 2.2em; }
+  h2 { font-size: 1.4em; }
 
-  h1 {
-    font-size: 2.2em;
-  }
-
-  h2 {
-    font-size: 1.4em;
-  }
-
+  /* Stack table cells */
   td {
     display: block;
     width: 100%;
     padding-right: 0;
-    padding-bottom: 20px;
+    padding-bottom: 20px; /* Space between stacked sections */
+    padding-left: 0; /* Remove left padding inherited from rule above */
+  }
+  td:last-child {
+      padding-bottom: 0; /* No extra padding at the very bottom */
+  }
+  /* Redundant selector but specific for clarity */
+  table tr td:last-child {
+      padding-bottom: 0;
   }
 
-  table tr td:last-child {
-    padding-bottom: 0;
-  }
 }
+
+@media (max-width: 600px) {
+    body {
+        padding-top: 70px; /* Ensure fixed elements don't overlap */
+    }
+    .theme-switch-wrapper {
+        top: 12px; /* Adjust position */
+        left: 15px;
+    }
+    .menu-button {
+        top: 8px; /* Adjust position */
+        right: 15px;
+        font-size: 2em; /* Slightly smaller hamburger */
+    }
+    .nav-menu {
+        width: 250px;
+        right: -270px; /* Adjust hiding position */
+    }
+
+    /* Ensure stacked table cells work well */
+     td {
+        padding-bottom: 25px; /* Maybe more space */
+     }
+}
+

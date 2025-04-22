@@ -4,12 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Saswat Sahoo Resume</title>
-  <!-- Link to the external CSS file -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header Section -->
+  <!-- Theme Toggle Switch -->
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" />
+      <div class="slider round"></div>
+    </label>
+  </div>
+
+  <!-- Menu Button (Hamburger Icon) -->
+  <button class="menu-button" id="menuButton" aria-label="Open Navigation Menu">☰</button> <!-- Changed from ⋮ -->
+
+  <!-- Navigation Menu (Initially Hidden) -->
+  <nav class="nav-menu" id="navMenu">
+    <button class="close-menu-button" id="closeMenuButton" aria-label="Close Navigation Menu">×</button>
+    <ul>
+      <li><a href="#summary">Executive Summary</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#volunteer">Volunteer Work</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#languages">Languages</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+    </ul>
+  </nav>
+
+  <!-- Your existing resume content below -->
+
   <h1>SASWAT SAHOO</h1>
   <h3>Tech, AI & Business Enthusiast</h3>
   <p><strong>B.S. in Data Science and Applications @ IIT Madras ’28</strong> | <strong>B.B.A. in Digital Business & Entrepreneurship @ IIM Bangalore ’27</strong> | <strong>Isha Volunteer</strong><br>
@@ -19,7 +45,7 @@
   <hr>
 
   <!-- Executive Summary -->
-  <h2>EXECUTIVE SUMMARY</h2>
+  <h2 id="summary">EXECUTIVE SUMMARY</h2>
   <p>
     Exploring the intersection of technology, business, and human consciousness, my passion lies in diving into ideas that are both impactful and enduring.
     I am driven by intuitive, perceptual thinking—through storytelling, coding, or entrepreneurship—with a focus on solving meaningful problems and uncovering patterns across disciplines.
@@ -32,7 +58,7 @@
     <!-- Row 1: Experience | Volunteer Work -->
     <tr>
       <td>
-        <h2>EXPERIENCE</h2>
+        <h2 id="experience">EXPERIENCE</h2>
         <hr>
         <h3>Learning Pod Leader</h3>
         <p><strong>Indian Institute of Management Bangalore – Part-time | Remote<br>
@@ -46,7 +72,7 @@
         </ul>
       </td>
       <td>
-        <h2>VOLUNTEER WORK</h2>
+        <h2 id="volunteer">VOLUNTEER WORK</h2>
         <hr>
         <h3>Volunteer</h3>
         <p><strong>Isha Foundation – Part-time | Hybrid (Bhubaneswar, Odisha)<br>
@@ -64,24 +90,20 @@
     <!-- Row 2: Education | Projects -->
     <tr>
       <td>
-        <h2>EDUCATION</h2>
+        <h2 id="education">EDUCATION</h2>
         <hr>
         <ul>
           <li><strong>Indian Institute of Technology, Madras</strong><br>B.S. in Data Science and Applications<br>Jun 2024 – Present</li>
-          <!-- Removed <br> here -->
           <li><strong>Indian Institute of Management Bangalore</strong><br>B.B.A. in Digital Business and Entrepreneurship<br>Sep 2024 – Present</li>
-          <!-- Removed <br> here -->
           <li><strong>O.D.M. Public School, Bhubaneswar</strong><br>CBSE | 2021 – 2023</li>
-          <!-- Removed <br> here -->
           <li><strong>Dr. A.N. Khosla D.A.V. Public School, Rourkela</strong><br>CBSE | 2017 – 2021</li>
         </ul>
       </td>
       <td>
-        <h2>PROJECTS</h2>
+        <h2 id="projects">PROJECTS</h2>
         <hr>
         <ul>
           <li><strong>Vyuh Cyber Security Consultancy:</strong> Launched a zero-budget micro-consulting service (IIMB BBA Project) promoting personal digital safety via awareness-driven advice, applying lean principles.</li>
-          <!-- Removed <br> here -->
           <li><strong>Prana Seva Fitness Consultancy:</strong> Developed a zero-budget micro-consulting initiative (IIMB BBA Project) offering minimalist, actionable guidance for holistic health and fitness.</li>
         </ul>
       </td>
@@ -89,13 +111,13 @@
 
     <!-- Row 3: Main SKILLS Heading -->
     <tr>
-        <td colspan="2"> <!-- Cell spans both columns -->
-            <h2>SKILLS</h2>
-            <hr> <!-- HR spans due to colspan -->
+        <td colspan="2">
+            <h2 id="skills">SKILLS</h2>
+            <hr>
         </td>
     </tr>
 
-    <!-- Row 4: Core Competencies | Technical Skills (Lists) -->
+    <!-- Row 4: Core Competencies | Technical Skills -->
     <tr>
       <td>
         <h3>Core Competencies</h3>
@@ -125,7 +147,7 @@
     <!-- Row 5: Languages | Achievements -->
     <tr>
       <td>
-        <h2>LANGUAGES</h2>
+        <h2 id="languages">LANGUAGES</h2>
         <hr>
         <ul>
           <li><strong>English:</strong> Native / Bilingual Proficiency</li>
@@ -135,7 +157,7 @@
         </ul>
       </td>
       <td>
-        <h2>ACHIEVEMENTS</h2>
+        <h2 id="achievements">ACHIEVEMENTS</h2>
         <hr>
         <ul>
           <li><strong>NTSE Stage 1 Qualifier –</strong> 2021</li>
@@ -147,5 +169,8 @@
 
   </table>
 
+  <!-- Link to the external JavaScript file -->
+  <script src="script.js"></script>
 </body>
 </html>
+
